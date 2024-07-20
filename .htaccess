@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Do not redirect the root URL
+RewriteCond %{REQUEST_URI} !^/$
+
+# Redirect all other requests to redirect.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ redirect.php [L,QSA]
+
